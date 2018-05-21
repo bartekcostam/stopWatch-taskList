@@ -3,9 +3,10 @@ var h1 = document.getElementsByTagName('h1')[0],
 start = document.getElementById('start'),
 stop = document.getElementById('stop'),
 clear = document.getElementById('clear'),
+plus = document.getElementById('plus'),
 seconds = 0, minutes = 0, hours = 0,
 t,
-plus,
+
 addNote,
 deleteNote,
 openNote;
@@ -40,15 +41,21 @@ clearTimeout(t);
 }
 
 /* Clear button */
-clear.onclick = function() {
-    infoCancel();
-}
 
-function infoCancel() {
-    alert("Are you sure ?");
-}
 
-function clear() { 
+deleteTime.onclick = function() { 
     h1.textContent = "00:00:00";
 seconds = 0; minutes = 0; hours = 0;
+}
+
+plus.onclick = function () { 
+    
+    var el = document.createElement('div'); 
+
+    el.classList.add('text-center');
+
+    tasks-container 
+
+     
+
 }

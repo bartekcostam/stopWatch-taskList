@@ -21,7 +21,7 @@ body{
 }
 
 
-.title{
+.title, #modal{
     
     font-family: 'Montserrat', sans-serif;
 }
