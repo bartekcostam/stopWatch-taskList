@@ -4,6 +4,12 @@ body{
     
 }
 
+#plus{
+
+    padding: 20px;
+    color: black;
+}
+
 #section{
 
     box-shadow: 0 0 5px;

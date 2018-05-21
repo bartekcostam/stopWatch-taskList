@@ -4,7 +4,11 @@ start = document.getElementById('start'),
 stop = document.getElementById('stop'),
 clear = document.getElementById('clear'),
 seconds = 0, minutes = 0, hours = 0,
-t;
+t,
+plus,
+addNote,
+deleteNote,
+openNote;
 
 function add() {
 seconds++;
@@ -37,6 +41,14 @@ clearTimeout(t);
 
 /* Clear button */
 clear.onclick = function() {
-h1.textContent = "00:00:00";
+    infoCancel();
+}
+
+function infoCancel() {
+    alert("Are you sure ?");
+}
+
+function clear() { 
+    h1.textContent = "00:00:00";
 seconds = 0; minutes = 0; hours = 0;
 }
