@@ -13,7 +13,15 @@ body{
 #section{
 
     box-shadow: 0 0 5px;
+    opacity: 0.5;
 }
+
+#section:hover{
+
+    opacity: 1.0;
+}
+
+
 
 .btn{
 
@@ -21,7 +29,7 @@ body{
 }
 
 
-.title, #modal{
+.title, #modal,h1,time,text-content{
     
     font-family: 'Montserrat', sans-serif;
 }

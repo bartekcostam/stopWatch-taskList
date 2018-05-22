@@ -7,6 +7,8 @@ plus = document.getElementById('plus'),
 seconds = 0, minutes = 0, hours = 0,
 t,
 
+
+
 addNote,
 deleteNote,
 openNote;
@@ -22,14 +24,16 @@ if (seconds >= 60) {
     }
 }
 
+
+
 h1.textContent = (hours ? (hours > 9 ? hours : "0" + hours) : "00") + ":" + (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" + (seconds > 9 ? seconds : "0" + seconds);
 
 timer();
 }
 function timer() {
 t = setTimeout(add, 1000);
+
 }
-timer();
 
 
 /* Start button */
