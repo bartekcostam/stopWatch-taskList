@@ -52,9 +52,5 @@ deleteTime.onclick = function() {
 seconds = 0; minutes = 0; hours = 0;
 }
 
-plus.onclick = function addNote() { 
 
-
-console.log("object");
-}
 
