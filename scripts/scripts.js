@@ -52,12 +52,9 @@ deleteTime.onclick = function() {
 seconds = 0; minutes = 0; hours = 0;
 }
 
-plus.onclick = function (addNote) { 
-    
-    var el = document.createElement('div'); 
+plus.onclick = function addNote() { 
 
-    el.classList.add('text-center');
 
+console.log("object");
 }
 
-addNote()
