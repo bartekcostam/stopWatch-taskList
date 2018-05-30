@@ -52,5 +52,10 @@ deleteTime.onclick = function() {
 seconds = 0; minutes = 0; hours = 0;
 }
 
+plus.onclick = function(){
 
+    var addNote = write.document("<h1>costam</h1>");
+
+    
+}
 
