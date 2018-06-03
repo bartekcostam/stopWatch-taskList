@@ -13,6 +13,8 @@ addNote,
 deleteNote,
 openNote;
 
+
+
 function add() {
 seconds++;
 if (seconds >= 60) {
@@ -36,7 +38,11 @@ t = setTimeout(add, 1000);
 }
 
 
+
+
 /* Start button */
+
+
 start.onclick = timer;
 
 /* Stop button */
@@ -54,12 +60,12 @@ seconds = 0; minutes = 0; hours = 0;
 
 
 
-    var i = 0;
+    
 var original = document.getElementById('duplicater');
 
 function duplicate() {
     var clone = original.cloneNode(true); // "deep" clone so I can try to do it in diffrent way 
-    clone.id = "duplicater" + ++i;
+    clone.id = "duplicater";
     // or clone.id = ""; if the divs don't need an ID
     original.parentNode.appendChild(clone);
 }
