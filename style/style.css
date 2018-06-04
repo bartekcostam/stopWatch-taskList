@@ -1,35 +1,37 @@
-body{
-    
-    padding: 20px;
-    
+body {
+  padding: 20px;
 }
 
-#plus{
-
-    padding: 20px;
-    color: black;
+#plus {
+  padding: 20px;
+  color: black;
 }
 
-#section{
-
-    box-shadow: 0 0 5px;
-    opacity: 0.5;
+#section {
+  box-shadow: 0 0 5px;
+  opacity: 0.5;
 }
 
-#section:hover{
-
-    opacity: 1.0;
+#section:hover {
+  opacity: 1;
 }
 
-
-
-.btn{
-
-    margin: 10px;
+.btn {
+  margin: 10px;
 }
 
+.title,
+#modal,
+h1,
+time,
+text-content {
+  font-family: "Montserrat", sans-serif;
+}
 
-.title, #modal,h1,time,text-content{
-    
-    font-family: 'Montserrat', sans-serif;
+.title,
+textarea {
+  font-family: "Montserrat", sans-serif;
+
+  position: relative;
+  margin: 40px;
 }
