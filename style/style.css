@@ -40,4 +40,7 @@ label:hover {
   background: #f2f5ff;
   border-radius: 5px;
   padding: 2px 4px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  margin: 5px;
 }
