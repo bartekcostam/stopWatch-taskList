@@ -13,7 +13,7 @@ $(".clickedit")
   .hide()
   .focusout(endEdit)
   .keyup(function(e) {
-    if ((e.which && e.which == 13) || (e.keyCode && e.keyCode == 13)) {
+    if ((e.which && e.which == 9) || (e.keyCode && e.keyCode == 9)) {
       endEdit(e);
       return false;
     } else {
