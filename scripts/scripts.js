@@ -1,5 +1,7 @@
 // Dodac petle do while, albo for a najlepiej if i warunek, on load
 
+//skanowanie w tle..
+
 var h1 = document.getElementsByTagName("h1")[0],
   start = document.getElementById("start"),
   stop = document.getElementById("stop"),
