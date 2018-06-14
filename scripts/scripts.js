@@ -2,6 +2,8 @@
 
 //skanowanie w tle..
 
+//
+
 var h1 = document.getElementsByTagName("h1")[0],
   start = document.getElementById("start"),
   stop = document.getElementById("stop"),
