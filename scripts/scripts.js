@@ -2,7 +2,7 @@
 
 //skanowanie w tle..
 
-//
+//local storage in json format
 
 var h1 = document.getElementsByTagName("h1")[0],
   start = document.getElementById("start"),
@@ -70,8 +70,7 @@ function duplicate() {
   // or clone.id = ""; if the divs don't need an ID
   original.parentNode.appendChild(clone);
 
+  //in this step I should run onload method too, to reload clone DOM elements
 
-  //in this step I should run onload method too, to reload clone DOM elements 
-
-  //I can try to save some data to ceche memory 
+  //I can try to save some data to ceche memory
 }
