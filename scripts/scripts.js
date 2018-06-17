@@ -6,6 +6,8 @@
 
 //
 
+
+//
 var h1 = document.getElementsByTagName("h1")[0],
   start = document.getElementById("start"),
   stop = document.getElementById("stop"),
@@ -18,7 +20,7 @@ var h1 = document.getElementsByTagName("h1")[0],
   addNote,
   deleteNote,
   openNote;
-window.addEventListener("unload", function(start) {
+window.addEventListener("unload", function (start) {
   console.log("I am the 3rd one.");
 });
 
@@ -42,6 +44,7 @@ function add() {
 
   timer();
 }
+
 function timer() {
   t = setTimeout(add, 1000);
 }
@@ -51,13 +54,13 @@ function timer() {
 start.onclick = timer;
 
 /* Stop button */
-stop.onclick = function() {
+stop.onclick = function () {
   clearTimeout(t);
 };
 
 /* Clear button */
 
-deleteTime.onclick = function() {
+deleteTime.onclick = function () {
   h1.textContent = "00:00:00";
   seconds = 0;
   minutes = 0;
