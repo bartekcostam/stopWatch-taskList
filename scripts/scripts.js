@@ -7,6 +7,8 @@
 //
 
 
+
+
 //
 var h1 = document.getElementsByTagName("h1")[0],
   start = document.getElementById("start"),
@@ -44,6 +46,7 @@ function add() {
 
   timer();
 }
+
 
 function timer() {
   t = setTimeout(add, 1000);
