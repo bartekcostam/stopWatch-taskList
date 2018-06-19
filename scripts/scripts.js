@@ -26,6 +26,7 @@ window.addEventListener("unload", function (start) {
   console.log("I am the 3rd one.");
 });
 
+
 function add() {
   seconds++;
   if (seconds >= 60) {
