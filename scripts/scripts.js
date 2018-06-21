@@ -80,6 +80,10 @@ function duplicate() {
   // or clone.id = ""; if the divs don't need an ID
   original.parentNode.appendChild(clone);
 
+  document.getElementById("start").innerHTML = "cos";
+  cos.onclick = function timer() {
+    t = setTimeout(add, 1000);
+  }
 
   //in this step I should run onload method too, to reload clone DOM elements
 
