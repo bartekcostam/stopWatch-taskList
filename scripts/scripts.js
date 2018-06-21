@@ -22,6 +22,7 @@ var h1 = document.getElementsByTagName("h1")[0],
   addNote,
   deleteNote,
   openNote;
+
 window.addEventListener("unload", function (start) {
   console.log("I am the 3rd one.");
 });
@@ -78,6 +79,7 @@ function duplicate() {
   clone.id = "duplicater";
   // or clone.id = ""; if the divs don't need an ID
   original.parentNode.appendChild(clone);
+
 
   //in this step I should run onload method too, to reload clone DOM elements
 
