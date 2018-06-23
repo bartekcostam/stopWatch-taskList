@@ -81,23 +81,10 @@ function duplicate() {
   // or clone.id = ""; if the divs don't need an ID
   original.parentNode.appendChild(clone);
 
-  var h1 = document.getElementsByTagName("h1")[0],
-    start = document.getElementById("start"),
-    stop = document.getElementById("stop"),
-    clear = document.getElementById("clear"),
-    plus = document.getElementById("plus"),
-    seconds = 0,
-    minutes = 0,
-    hours = 0,
-    t,
-    addNote,
-    deleteNote,
-    openNote;
 
-  window.addEventListener("unload", function (start) {
-    console.log("I am the 3rd one.");
-  });
+  window.location = window.location.href;
 
+  window.location.reload(true);
   //in this step I should run onload method too, to reload clone DOM elements
 
   //I can try to save some data to ceche memory
