@@ -4,7 +4,7 @@
 
 //local storage in json format
 
-//
+//Najlepiej bylo by uzyc ajax do wymiany danych w tle, by nie przeladowywac scryptu
 
 
 
