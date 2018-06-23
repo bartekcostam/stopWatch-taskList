@@ -10,6 +10,7 @@
 
 
 //
+
 var h1 = document.getElementsByTagName("h1")[0],
   start = document.getElementById("start"),
   stop = document.getElementById("stop"),
@@ -80,10 +81,22 @@ function duplicate() {
   // or clone.id = ""; if the divs don't need an ID
   original.parentNode.appendChild(clone);
 
-  document.getElementById("start").innerHTML = "cos";
-  cos.onclick = function timer() {
-    t = setTimeout(add, 1000);
-  }
+  var h1 = document.getElementsByTagName("h1")[0],
+    start = document.getElementById("start"),
+    stop = document.getElementById("stop"),
+    clear = document.getElementById("clear"),
+    plus = document.getElementById("plus"),
+    seconds = 0,
+    minutes = 0,
+    hours = 0,
+    t,
+    addNote,
+    deleteNote,
+    openNote;
+
+  window.addEventListener("unload", function (start) {
+    console.log("I am the 3rd one.");
+  });
 
   //in this step I should run onload method too, to reload clone DOM elements
 
