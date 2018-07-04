@@ -91,4 +91,3 @@ function duplicate() {
   //I can try to save some data to ceche memory
 }
 
-//  
