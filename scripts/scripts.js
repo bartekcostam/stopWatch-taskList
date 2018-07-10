@@ -64,6 +64,7 @@ stop.onclick = function () {
   clearTimeout(t);
 };
 
+
 /* Clear button */
 
 deleteTime.onclick = function () {
