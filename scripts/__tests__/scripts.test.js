@@ -4,12 +4,14 @@ let consoleError;
 beforeEach(() => {
   consoleError = jest.spyOn(console, 'error').mockImplementation(() => {});
   document.body.innerHTML = `
-    <div id="duplicater"></div>
-    <h1></h1>
-    <button id="start"></button>
-    <button id="stop"></button>
-    <div id="clear"></div>
-    <div id="deleteTime"></div>
+    <div id="duplicater">
+      <time class="display"></time>
+      <button class="start"></button>
+      <button class="stop"></button>
+      <button class="clear"></button>
+    </div>
+    <button id="deleteTime"></button>
+    <button id="plus"></button>
   `;
   jest.resetModules();
   duplicateFn = require('../scripts.js').duplicate;

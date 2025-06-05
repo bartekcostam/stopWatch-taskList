@@ -20,29 +20,28 @@
 </head>
 
 <body>
-  <div id="duplicater">
-    <div class="container">
+  <div id="timers">
+    <div id="duplicater" class="timer-card">
+      <div class="container">
+        <div class="text-center">
+            <h1>
+              <time class="display">00:00:00</time>
+            </h1>
+          <button class="start btn btn-outline-success">start</button>
+          <button class="stop btn btn-outline-primary">stop</button>
+          <button class="clear btn btn-outline-danger" data-toggle="modal" data-target="#myModal">clear</button>
+          <br>
 
-      <div id="section" class="text-center">
-          <h1>
-            <time id="display">00:00:00</time>
-          </h1>
-        <button id="start" class="btn btn-outline-success">start</button>
-        <button id="stop" class="btn btn-outline-primary">stop</button>
-        <a id="clear" href="#myModal" class="btn btn-outline-danger" data-toggle="modal" data-target="#myModal">clear</a>
-        <br>
-
-        <label class="pull-left">Title</label>
-        <input class="clickedit" type="text" />
-        <div class="clearfix"></div>
+          <label class="pull-left">Title</label>
+          <input class="clickedit" type="text" />
+          <div class="clearfix"></div>
+        </div>
       </div>
-
-
+      <br>
     </div>
-    <br>
   </div>
-  <div class="text-left">
-    <button id="plus" class="fas fa-plus fa-1x" onclick="duplicate()"></button>
+  <div class="text-left mt-2">
+    <button id="plus" class="btn btn-success">Add timer</button>
   </div>
   <button id="refreshButton" onclick="loadScript('scripts.js')">
     Refresh script

@@ -1,102 +1,103 @@
-// Dodac petle do while, albo for a najlepiej if i warunek, on load
+class Timer {
+  constructor(root) {
+    this.root = root;
+    this.display = root.querySelector('.display');
+    this.startBtn = root.querySelector('.start');
+    this.stopBtn = root.querySelector('.stop');
+    this.clearBtn = root.querySelector('.clear');
+    this.seconds = 0;
+    this.minutes = 0;
+    this.hours = 0;
+    this.timerInterval = null;
+    this.registerEvents();
+  }
 
-//skanowanie w tle..
-
-//local storage in json format
-
-//Najlepiej bylo by uzyc ajax do wymiany danych w tle, by nie przeladowywac scryptu
-
-
-
-
-//
-
-var timeDisplay = document.getElementById("display"),
-  startBtn = document.getElementById("start"),
-  stopBtn = document.getElementById("stop"),
-  clearBtn = document.getElementById("deleteTime"),
-  plus = document.getElementById("plus"),
-  seconds = 0,
-  minutes = 0,
-  hours = 0,
-  timerInterval,
-  addNote,
-  deleteNote,
-  openNote;
-
-window.addEventListener("unload", function (start) {
-  console.log("I am the 3rd one.");
-});
-
-
-function tick() {
-  seconds++;
-  if (seconds >= 60) {
-    seconds = 0;
-    minutes++;
-    if (minutes >= 60) {
-      minutes = 0;
-      hours++;
+  registerEvents() {
+    this.startBtn.addEventListener('click', () => this.start());
+    this.stopBtn.addEventListener('click', () => this.stop());
+    if (this.clearBtn) {
+      this.clearBtn.addEventListener('click', () => {
+        currentTimer = this;
+      });
     }
   }
 
-  timeDisplay.textContent =
-    (hours ? (hours > 9 ? hours : "0" + hours) : "00") +
-    ":" +
-    (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") +
-    ":" +
-    (seconds > 9 ? seconds : "0" + seconds);
-}
+  tick() {
+    this.seconds++;
+    if (this.seconds >= 60) {
+      this.seconds = 0;
+      this.minutes++;
+      if (this.minutes >= 60) {
+        this.minutes = 0;
+        this.hours++;
+      }
+    }
+    this.updateDisplay();
+  }
 
-function startTimer() {
-  if (!timerInterval) {
-    timerInterval = setInterval(tick, 1000);
-    timeDisplay.classList.add("running");
+  updateDisplay() {
+    this.display.textContent =
+      (this.hours > 9 ? this.hours : '0' + this.hours) + ':' +
+      (this.minutes > 9 ? this.minutes : '0' + this.minutes) + ':' +
+      (this.seconds > 9 ? this.seconds : '0' + this.seconds);
+  }
+
+  start() {
+    if (!this.timerInterval) {
+      this.timerInterval = setInterval(() => this.tick(), 1000);
+      this.display.classList.add('running');
+    }
+  }
+
+  stop() {
+    clearInterval(this.timerInterval);
+    this.timerInterval = null;
+    this.display.classList.remove('running');
+  }
+
+  reset() {
+    this.stop();
+    this.seconds = 0;
+    this.minutes = 0;
+    this.hours = 0;
+    this.updateDisplay();
   }
 }
 
-function stopTimer() {
-  clearInterval(timerInterval);
-  timerInterval = null;
-  timeDisplay.classList.remove("running");
+let timers = [];
+let currentTimer = null;
+
+function initTimerElements() {
+  const original = document.getElementById('duplicater');
+  if (original) {
+    timers.push(new Timer(original));
+  }
+  const deleteBtn = document.getElementById('deleteTime');
+  if (deleteBtn) {
+    deleteBtn.addEventListener('click', () => {
+      if (currentTimer) {
+        currentTimer.reset();
+        currentTimer = null;
+      }
+    });
+  }
+  const plus = document.getElementById('plus');
+  if (plus) {
+    plus.addEventListener('click', duplicate);
+  }
 }
 
-
-/* Start button */
-
-startBtn.onclick = startTimer;
-
-/* Stop button */
-stopBtn.onclick = stopTimer;
-
-/* Clear button */
-
-clearBtn.onclick = function () {
-  stopTimer();
-  seconds = 0;
-  minutes = 0;
-  hours = 0;
-  timeDisplay.textContent = "00:00:00";
-};
-
-var original = document.getElementById("duplicater");
+document.addEventListener('DOMContentLoaded', initTimerElements);
 
 function duplicate() {
-  var clone = original.cloneNode(true); // "deep" clone so I can try to do it in diffrent way
-  clone.id = "duplicater";
-  // or clone.id = ""; if the divs don't need an ID
+  const original = document.getElementById('duplicater');
+  if (!original) return;
+  const clone = original.cloneNode(true);
+  clone.id = 'duplicater';
   original.parentNode.appendChild(clone);
-
-
-  window.location = window.location.href;
-
-  window.location.reload(true);
-
-  //in this step I should run onload method too, to reload clone DOM elements
-
-  // I can try to save some data to cache memory
+  timers.push(new Timer(clone));
 }
 
-
-if (typeof module !== "undefined") { module.exports = { duplicate }; }
-
+if (typeof module !== 'undefined') {
+  module.exports = { duplicate, Timer };
+}
