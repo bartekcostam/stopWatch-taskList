@@ -64,12 +64,39 @@ class Timer {
   }
 }
 
+function attachEditHandlers(container) {
+  const input = container.querySelector('.clickedit');
+  const label = input ? input.previousElementSibling : null;
+  if (!input || !label) return;
+  input.style.display = 'none';
+
+  function endEdit() {
+    label.textContent = input.value === '' ? 'Click me and enter some text' : input.value;
+    input.style.display = 'none';
+    label.style.display = '';
+  }
+
+  input.addEventListener('blur', endEdit);
+  input.addEventListener('keyup', e => {
+    if (e.key === 'Tab') {
+      endEdit();
+    }
+  });
+
+  label.addEventListener('click', () => {
+    label.style.display = 'none';
+    input.style.display = '';
+    input.focus();
+  });
+}
+
 let timers = [];
 let currentTimer = null;
 
 function initTimerElements() {
   const original = document.getElementById('duplicater');
   if (original) {
+    attachEditHandlers(original);
     timers.push(new Timer(original));
   }
   const deleteBtn = document.getElementById('deleteTime');
@@ -95,9 +122,10 @@ function duplicate() {
   const clone = original.cloneNode(true);
   clone.id = 'duplicater';
   original.parentNode.appendChild(clone);
+  attachEditHandlers(clone);
   timers.push(new Timer(clone));
 }
 
 if (typeof module !== 'undefined') {
-  module.exports = { duplicate, Timer };
+  module.exports = { duplicate, Timer, attachEditHandlers };
 }
