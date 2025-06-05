@@ -18,3 +18,13 @@ This is a small web application that combines a timer with a simple task list. Y
 - Create separate timers for multiple tasks in a to‑do list
 
 Open `index.html` in a browser to try it out.
+
+## Command-line usage
+
+Run the `run.sh` script to install dependencies and open an interactive menu.
+
+```
+./run.sh
+```
+
+Menu options allow you to start a local server for the application or run the test suite.
