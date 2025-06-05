@@ -92,3 +92,6 @@ function duplicate() {
   //I can try to save some data to ceche memory
 }
 
+
+if (typeof module !== "undefined") { module.exports = { duplicate }; }
+
