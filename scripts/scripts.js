@@ -89,6 +89,6 @@ function duplicate() {
 
   //in this step I should run onload method too, to reload clone DOM elements
 
-  //I can try to save some data to ceche memory
+  // I can try to save some data to cache memory
 }
 
